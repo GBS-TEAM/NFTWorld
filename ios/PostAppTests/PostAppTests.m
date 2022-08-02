@@ -34,13 +34,7 @@
 
   __block NSString *redboxError = nil;
 #ifdef DEBUG
-  RCTSetLogFunction(
-      ^(RCTLogLevel level, RCTLogSource source, NSString *fileName, NSNumber *lineNumber, NSString *message) {
-        if (level >= RCTLogLevelError) {
-          redboxError = message;
-        }
-      });
-#endif
+
 
   while ([date timeIntervalSinceNow] > 0 && !foundElement && !redboxError) {
     [[NSRunLoop mainRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
